@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "rows": 10,
+    "columns": 5,
+    "findings": 9,
+    "affected_rows": 7,
+    "rows_without_findings": 3,
+    "rows_without_findings_pct": 30.0,
+    "by_rule": {
+      "date_order": 1,
+      "duplicate_key": 2,
+      "duplicate_row": 2,
+      "invalid_date": 1,
+      "invalid_number": 1,
+      "missing_required": 1,
+      "negative_number": 1
+    },
+    "elapsed_ms": 2.89
+  },
+  "findings": [
+    {
+      "record": 3,
+      "rule": "duplicate_key",
+      "severity": "erro",
+      "column": "pedido_id",
+      "value": "P002",
+      "message": "Identificador repetido.",
+      "suggestion": "Confira se a chave deve identificar um único registro."
+    },
+    {
+      "record": 3,
+      "rule": "duplicate_row",
+      "severity": "atenção",
+      "column": "(registro completo)",
+      "value": "",
+      "message": "Registro idêntico a outro registro.",
+      "suggestion": "Confirme a origem e mantenha apenas os registros necessários."
+    },
+    {
+      "record": 4,
+      "rule": "duplicate_key",
+      "severity": "erro",
+      "column": "pedido_id",
+      "value": "P002",
+      "message": "Identificador repetido.",
+      "suggestion": "Confira se a chave deve identificar um único registro."
+    },
+    {
+      "record": 4,
+      "rule": "duplicate_row",
+      "severity": "atenção",
+      "column": "(registro completo)",
+      "value": "",
+      "message": "Registro idêntico a outro registro.",
+      "suggestion": "Confirme a origem e mantenha apenas os registros necessários."
+    },
+    {
+      "record": 5,
+      "rule": "negative_number",
+      "severity": "erro",
+      "column": "valor",
+      "value": "-25.00",
+      "message": "Valor negativo em coluna definida como não negativa.",
+      "suggestion": "Confira o lançamento na origem; não inverta o sinal automaticamente."
+    },
+    {
+      "record": 6,
+      "rule": "missing_required",
+      "severity": "erro",
+      "column": "cliente",
+      "value": "",
+      "message": "Campo obrigatório vazio.",
+      "suggestion": "Preencha a partir da fonte original."
+    },
+    {
+      "record": 7,
+      "rule": "invalid_number",
+      "severity": "erro",
+      "column": "valor",
+      "value": "abc",
+      "message": "Valor não segue o formato numérico escolhido.",
+      "suggestion": "Confira o valor e os separadores decimal e de milhar."
+    },
+    {
+      "record": 8,
+      "rule": "invalid_date",
+      "severity": "erro",
+      "column": "data_compra",
+      "value": "2026-02-30",
+      "message": "Data inválida ou fora do formato escolhido.",
+      "suggestion": "Confira a data e o formato selecionado."
+    },
+    {
+      "record": 9,
+      "rule": "date_order",
+      "severity": "erro",
+      "column": "data_compra → data_entrega",
+      "value": "2026-01-18",
+      "message": "A data final ocorre antes da inicial.",
+      "suggestion": "Confira as duas datas na origem."
+    }
+  ],
+  "rules": {
+    "required": [
+      "pedido_id",
+      "cliente",
+      "valor",
+      "data_compra"
+    ],
+    "key": "pedido_id",
+    "numeric": [
+      "valor"
+    ],
+    "nonnegative": [
+      "valor"
+    ],
+    "dates": [
+      "data_compra",
+      "data_entrega"
+    ],
+    "date_pairs": [
+      [
+        "data_compra",
+        "data_entrega"
+      ]
+    ],
+    "number_style": "decimal_dot",
+    "date_format": "%Y-%m-%d",
+    "exact_duplicates": true
+  },
+  "columns": [
+    "pedido_id",
+    "cliente",
+    "valor",
+    "data_compra",
+    "data_entrega"
+  ]
+}
