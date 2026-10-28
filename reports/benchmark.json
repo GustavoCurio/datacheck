@@ -1,0 +1,33 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "repeats": 3,
+  "method": "mediana; leitura CSV e motor medidos separadamente; dados sintéticos; sem IA ou comparação humana",
+  "results": [
+    {
+      "rows": 1000,
+      "bytes": 54900,
+      "expected_findings": 50,
+      "observed_findings": 50,
+      "read_median_ms": 2.63,
+      "audit_median_ms": 16.99
+    },
+    {
+      "rows": 10000,
+      "bytes": 548550,
+      "expected_findings": 500,
+      "observed_findings": 500,
+      "read_median_ms": 18.76,
+      "audit_median_ms": 158.77
+    },
+    {
+      "rows": 50000,
+      "bytes": 2742550,
+      "expected_findings": 2500,
+      "observed_findings": 2500,
+      "read_median_ms": 108.98,
+      "audit_median_ms": 1058.87
+    }
+  ]
+}
